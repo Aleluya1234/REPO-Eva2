@@ -1,1 +1,258 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f6;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #1a472a, #2d6a4f);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Navegación con filtros */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filtro-btn {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid #2d6a4f;
+    color: #2d6a4f;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn:hover {
+    background: #2d6a4f;
+    color: white;
+    transform: scale(1.05);
+}
+
+.filtro-btn.active {
+    background: #1a472a;
+    color: white;
+    border-color: #1a472a;
+}
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Catálogo */
+#catalogo h2 {
+    margin-bottom: 20px;
+    color: #1a472a;
+}
+
+#lista-experiencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjetas de experiencia */
+.tarjeta {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.tarjeta .icono {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+    color: #1a472a;
+    margin-bottom: 8px;
+}
+
+.tarjeta .lugar {
+    color: #5d6d7e;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.tarjeta .categoria {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #1a472a;
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 5px 0 10px;
+}
+
+.tarjeta .precio {
+    font-weight: bold;
+    color: #2d6a4f;
+    font-size: 1.1rem;
+}
+
+.tarjeta .cupos {
+    color: #5d6d7e;
+    font-size: 0.9rem;
+}
+
+.tarjeta .descripcion {
+    margin: 10px 0;
+    display: none;
+}
+
+.tarjeta .descripcion.mostrar {
+    display: block;
+}
+
+.tarjeta .btn-ver-mas {
+    background: none;
+    border: none;
+    color: #2d6a4f;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.tarjeta .btn-ver-mas:hover {
+    text-decoration: underline;
+}
+
+/* Formulario */
+#reserva {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    align-self: start;
+}
+
+#reserva h2 {
+    color: #1a472a;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dce1e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #2d6a4f;
+}
+
+.error-mensaje {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 4px;
+    min-height: 20px;
+}
+
+.campo.error input,
+.campo.error select {
+    border-color: #e74c3c;
+}
+
+#btn-reservar {
+    width: 100%;
+    padding: 12px;
+    background: #1a472a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#btn-reservar:hover {
+    background: #2d6a4f;
+}
+
+.exito {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 2px solid #c3e6cb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #5d6d7e;
+    border-top: 2px solid #dce1e6;
+}
