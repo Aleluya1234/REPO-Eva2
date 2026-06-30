@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aysén Vivo - Turismo Sostenible</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Aysén Vivo</h1>
+        <p>Experiencias turísticas sostenibles en la Región de Aysén</p>
+    </header>
 
+    <nav>
+        <button class="filtro-btn active" data-categoria="Todos">Todos</button>
+        <button class="filtro-btn" data-categoria="Navegación">Navegación</button>
+        <button class="filtro-btn" data-categoria="Trekking">Trekking</button>
+        <button class="filtro-btn" data-categoria="Pesca">Pesca</button>
+        <button class="filtro-btn" data-categoria="Cultura">Cultura</button>
+    </nav>
+
+    <main>
+        <section id="catalogo">
+            <h2>Experiencias Disponibles</h2>
+            <div id="lista-experiencias"></div>
+        </section>
+
+        <section id="reserva">
+            <h2>Reserva tu Experiencia</h2>
+            <form id="formulario-reserva">
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
+                    <span class="error-mensaje"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="ejemplo@correo.com">
+                    <span class="error-mensaje"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="experiencia-select">Experiencia a reservar</label>
+                    <select id="experiencia-select">
+                        <option value="">Selecciona una experiencia</option>
+                    </select>
+                    <span class="error-mensaje"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="personas">Número de personas</label>
+                    <input type="number" id="personas" min="1" value="1">
+                    <span class="error-mensaje"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha">
+                    <span class="error-mensaje"></span>
+                </div>
+
+                <button type="submit" id="btn-reservar">Reservar</button>
+            </form>
+            <div id="mensaje-exito" class="exito" style="display:none;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aysén Vivo - Turismo Sostenible en la Patagonia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
