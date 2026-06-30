@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -9,51 +10,68 @@ body {
     background: #f0f4f3;
     color: #2c3e50;
     padding: 20px;
+    min-height: 100vh;
 }
 
+/* HEADER */
 header {
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
     background: linear-gradient(135deg, #1a472a, #2d6a4f);
     color: white;
     border-radius: 12px;
     margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(26, 71, 42, 0.3);
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* NAV - FILTROS */
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .filtro-btn {
-    padding: 10px 20px;
+    padding: 12px 28px;
     background: white;
     border: 2px solid #2d6a4f;
     color: #2d6a4f;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
+    font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .filtro-btn:hover {
     background: #2d6a4f;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.3);
 }
 
 .filtro-btn.active {
     background: #1a472a;
     color: white;
     border-color: #1a472a;
+    box-shadow: 0 4px 10px rgba(26, 71, 42, 0.4);
 }
 
+/* MAIN - GRID */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -68,69 +86,86 @@ main {
     }
 }
 
+/* CATÁLOGO */
 #catalogo h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #1a472a;
+    font-size: 1.8rem;
 }
 
 #lista-experiencias {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
 }
 
+/* TARJETAS */
 .tarjeta {
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(45, 106, 79, 0.1);
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #2d6a4f;
 }
 
 .tarjeta h3 {
     color: #1a472a;
+    font-size: 1.3rem;
     margin-bottom: 8px;
 }
 
 .tarjeta .lugar {
     color: #5d6d7e;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
 }
 
 .tarjeta .categoria {
     display: inline-block;
     background: #e8f5e9;
     color: #1a472a;
-    padding: 3px 12px;
-    border-radius: 15px;
+    padding: 4px 14px;
+    border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    margin: 5px 0 10px;
+    margin: 5px 0 12px;
 }
 
 .tarjeta .precio {
     font-weight: bold;
     color: #2d6a4f;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin: 5px 0;
 }
 
 .tarjeta .cupos {
     color: #5d6d7e;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
 }
 
 .tarjeta .descripcion {
-    margin: 10px 0;
+    margin: 12px 0;
     display: none;
+    color: #34495e;
+    line-height: 1.5;
 }
 
 .tarjeta .descripcion.mostrar {
     display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .tarjeta .btn-ver-mas {
@@ -139,93 +174,140 @@ main {
     color: #2d6a4f;
     font-weight: 600;
     cursor: pointer;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    transition: color 0.3s;
 }
 
 .tarjeta .btn-ver-mas:hover {
+    color: #1a472a;
     text-decoration: underline;
 }
 
+/* FORMULARIO */
 #reserva {
     background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    align-self: start;
+    border: 1px solid rgba(45, 106, 79, 0.1);
 }
 
 #reserva h2 {
     color: #1a472a;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
 }
 
 .campo {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .campo label {
     display: block;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     color: #2c3e50;
+    font-size: 0.95rem;
 }
 
 .campo input,
 .campo select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #dce1e6;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafcfb;
 }
 
 .campo input:focus,
 .campo select:focus {
     outline: none;
     border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+    background: white;
 }
 
 .error {
     color: #e74c3c;
     font-size: 0.85rem;
     display: block;
-    margin-top: 4px;
-    min-height: 20px;
+    margin-top: 5px;
+    min-height: 22px;
 }
 
 .campo.error input,
 .campo.error select {
     border-color: #e74c3c;
+    background: #fff5f5;
 }
 
 button[type="submit"] {
     width: 100%;
-    padding: 12px;
-    background: #1a472a;
+    padding: 14px;
+    background: linear-gradient(135deg, #1a472a, #2d6a4f);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(26, 71, 42, 0.3);
 }
 
 button[type="submit"]:hover {
-    background: #2d6a4f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 71, 42, 0.4);
 }
 
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* MENSAJE DE ÉXITO */
 .exito {
     background: #d4edda;
     color: #155724;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
     border: 2px solid #c3e6cb;
+    font-weight: 500;
+    animation: slideIn 0.5s ease;
 }
 
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 50px;
+    padding: 25px;
     color: #5d6d7e;
     border-top: 2px solid #dce1e6;
+    font-size: 0.95rem;
+}
+
+/* Responsive extra */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .filtro-btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+    
+    #lista-experiencias {
+        grid-template-columns: 1fr;
+    }
 }
