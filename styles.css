@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +6,11 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f7f6;
+    background: #f0f4f3;
     color: #2c3e50;
-    line-height: 1.6;
     padding: 20px;
 }
 
-/* Header */
 header {
     text-align: center;
     padding: 30px 20px;
@@ -25,15 +22,8 @@ header {
 
 header h1 {
     font-size: 2.5rem;
-    margin-bottom: 5px;
 }
 
-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* Navegación con filtros */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -49,15 +39,13 @@ nav {
     color: #2d6a4f;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 0.95rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .filtro-btn:hover {
     background: #2d6a4f;
     color: white;
-    transform: scale(1.05);
 }
 
 .filtro-btn.active {
@@ -66,7 +54,6 @@ nav {
     border-color: #1a472a;
 }
 
-/* Main */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -81,7 +68,6 @@ main {
     }
 }
 
-/* Catálogo */
 #catalogo h2 {
     margin-bottom: 20px;
     color: #1a472a;
@@ -93,24 +79,17 @@ main {
     gap: 20px;
 }
 
-/* Tarjetas de experiencia */
 .tarjeta {
     background: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-}
-
-.tarjeta .icono {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 10px;
 }
 
 .tarjeta h3 {
@@ -121,7 +100,6 @@ main {
 .tarjeta .lugar {
     color: #5d6d7e;
     font-size: 0.9rem;
-    margin-bottom: 5px;
 }
 
 .tarjeta .categoria {
@@ -161,20 +139,17 @@ main {
     color: #2d6a4f;
     font-weight: 600;
     cursor: pointer;
-    padding: 5px 0;
 }
 
 .tarjeta .btn-ver-mas:hover {
     text-decoration: underline;
 }
 
-/* Formulario */
 #reserva {
     background: white;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    align-self: start;
 }
 
 #reserva h2 {
@@ -200,7 +175,6 @@ main {
     border: 2px solid #dce1e6;
     border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
 }
 
 .campo input:focus,
@@ -209,7 +183,7 @@ main {
     border-color: #2d6a4f;
 }
 
-.error-mensaje {
+.error {
     color: #e74c3c;
     font-size: 0.85rem;
     display: block;
@@ -222,7 +196,7 @@ main {
     border-color: #e74c3c;
 }
 
-#btn-reservar {
+button[type="submit"] {
     width: 100%;
     padding: 12px;
     background: #1a472a;
@@ -232,10 +206,10 @@ main {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s;
 }
 
-#btn-reservar:hover {
+button[type="submit"]:hover {
     background: #2d6a4f;
 }
 
@@ -248,7 +222,6 @@ main {
     border: 2px solid #c3e6cb;
 }
 
-/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
