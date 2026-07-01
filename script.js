@@ -62,7 +62,7 @@ function renderExperiencias(lista) {
     contenedor.innerHTML = '';
 
     if (lista.length === 0) {
-        contenedor.innerHTML = '<p style="grid-column:1/-1; text-align:center;">No hay experiencias en esta categoría</p>';
+        contenedor.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; color:#5d6d7e;">No hay experiencias en esta categoría</p>';
         return;
     }
 
@@ -71,16 +71,15 @@ function renderExperiencias(lista) {
         tarjeta.className = 'tarjeta';
         tarjeta.innerHTML = `
             <h3>${exp.nombre}</h3>
-            <p class="lugar">${exp.lugar}</p>
+            <p class="lugar">📍 ${exp.lugar}</p>
             <span class="categoria">${exp.categoria}</span>
             <p class="precio">$${exp.precio.toLocaleString()} CLP</p>
-            <p class="cupos">Cupos: ${exp.cuposDisponibles}</p>
+            <p class="cupos">🎫 Cupos: ${exp.cuposDisponibles}</p>
             <p class="descripcion">${exp.descripcion}</p>
             <button class="btn-ver-mas">Ver más</button>
         `;
         contenedor.appendChild(tarjeta);
 
-        // Evento Ver más/Ver menos
         const btn = tarjeta.querySelector('.btn-ver-mas');
         const desc = tarjeta.querySelector('.descripcion');
         btn.addEventListener('click', () => {
@@ -138,7 +137,6 @@ function validarFormulario(e) {
     const fecha = document.getElementById('fecha');
     const exito = document.getElementById('mensaje-exito');
 
-    // Limpiar errores
     ['nombre', 'email', 'experiencia-select', 'personas', 'fecha'].forEach(id => mostrarError(id, ''));
 
     let valido = true;
@@ -165,7 +163,7 @@ function validarFormulario(e) {
     } else if (select.value) {
         const exp = experiencias.find(e => e.id === parseInt(select.value));
         if (exp && numPersonas > exp.cuposDisponibles) {
-            mostrarError('personas', `Solo hay ${exp.cuposDisponibles} cupos`);
+            mostrarError('personas', `Solo hay ${exp.cuposDisponibles} cupos disponibles`);
             valido = false;
         }
     }
@@ -180,9 +178,8 @@ function validarFormulario(e) {
         descontarCupo(exp.id, numPersonas);
         
         exito.style.display = 'block';
-        exito.textContent = `¡Reserva confirmada! ${numPersonas} persona(s) para "${exp.nombre}" el ${fecha.value}`;
+        exito.textContent = `✅ ¡Reserva confirmada! ${numPersonas} persona(s) para "${exp.nombre}" el ${fecha.value}`;
         
-        // Resetear formulario
         select.value = '';
         personas.value = '1';
         fecha.value = '';
